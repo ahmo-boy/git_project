@@ -1,5 +1,5 @@
 import pytest
-from your_module import get, my_slice
+from utils.arrs import get, my_slice
 
 
 def test_get_existing_index():
