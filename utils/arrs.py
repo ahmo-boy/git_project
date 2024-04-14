@@ -1,4 +1,4 @@
-def get(array, index, default=None):
+def  get(array, index, default=None):
     """
     Извлекает из списка значение по указанному индексу, если индекс существует.
     Если индекс не существует, возвращает значение по умолчанию.
@@ -35,8 +35,10 @@ def my_slice(coll, start=None, end=None):
     else:
         normalized_start = start
 
-    if end is None or end > length:
+    if end is None:
         normalized_end = length
+    elif end < 0:
+        normalized_end = length + end
     else:
         normalized_end = end
 
