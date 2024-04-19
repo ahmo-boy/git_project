@@ -1,6 +1,13 @@
 import pytest
 from utils.arrs import get, my_slice
 
+def test_my_slice_with_empty_list():
+    coll = []
+    assert my_slice(coll) == []
+
+def test_my_slice_default_values():
+    coll = [1, 2, 3, 4, 5]
+    assert my_slice(coll) == coll
 
 def test_get_existing_index():
     array = [1, 2, 3, 4, 5]
@@ -53,7 +60,7 @@ def test_my_slice_with_start_greater_than_length():
 def test_my_slice_with_end_less_than_or_equal_to_zero():
     coll = [1, 2, 3, 4, 5]
     assert my_slice(coll, end=0) == []
-    assert my_slice(coll, end=-1) == coll
+    assert my_slice(coll, end=-1) == coll[:-1]
 
 def test_my_slice_with_zero_start_and_minus_one_end():
     coll = [1, 2, 3, 4, 5]
